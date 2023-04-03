@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#F4F4F4"
+    android:backgroundTintMode="src_over"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <nl.dionsegijn.konfetti.KonfettiView
+        android:id="@+id/confetti"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/rollButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="352dp"
+        android:backgroundTint="@color/purple_500"
+        android:backgroundTintMode="add"
+        android:text="@string/roll_button"
+        android:textStyle="bold"
+        app:iconTintMode="src_atop"
+        app:layout_constraintEnd_toEndOf="@+id/diceImage"
+        app:layout_constraintStart_toStartOf="@+id/diceImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/diceImage"
+        android:layout_width="314dp"
+        android:layout_height="268dp"
+        android:layout_marginTop="72dp"
+        android:contentDescription="Image View"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="385dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="164dp"
+        android:gravity="center"
+        android:text="@string/result_text"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/myRemainText"
+        android:layout_width="385dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="244dp"
+        android:gravity="center"
+        android:text="@string/remain_text"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

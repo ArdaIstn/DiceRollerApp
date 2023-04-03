@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">DiceRollerApp</string>
+    <string name="roll_text">Roll</string>
+    <string name="hello_worldtext">Hello World</string>
+    <string name="roll_button">Zar At</string>
+    <string name="result_text">Gelen Sayi:</string>
+    <string name="remain_text">Kalan Hak:</string>
+    <string name="dice_guess_textview">Zar Tahmin Oyununa Hoşgeldiniz</string>
+    <string name="dice_guess_textview2">Lütfen zar tahmininizi ve hak sayınızı yazınız.</string>
+
+
+
+
+
+</resources>
