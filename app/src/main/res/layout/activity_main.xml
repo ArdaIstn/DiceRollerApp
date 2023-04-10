@@ -20,13 +20,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="352dp"
+        android:layout_marginTop="348dp"
         android:backgroundTint="@color/purple_500"
         android:backgroundTintMode="add"
         android:text="@string/roll_button"
         android:textStyle="bold"
         app:iconTintMode="src_atop"
         app:layout_constraintEnd_toEndOf="@+id/diceImage"
+        app:layout_constraintHorizontal_bias="0.553"
         app:layout_constraintStart_toStartOf="@+id/diceImage"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,26 +47,28 @@
         android:id="@+id/resultText"
         android:layout_width="385dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginBottom="268dp"
         android:gravity="center"
         android:text="@string/result_text"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/myRemainText"
         android:layout_width="385dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="244dp"
+        android:layout_marginBottom="188dp"
         android:gravity="center"
         android:text="@string/remain_text"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

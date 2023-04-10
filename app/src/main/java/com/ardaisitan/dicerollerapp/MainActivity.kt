@@ -2,7 +2,6 @@ package com.ardaisitan.dicerollerapp
 
 import android.animation.ArgbEvaluator
 import android.animation.ObjectAnimator
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +19,6 @@ class MainActivity : AppCompatActivity() {
     private var remainNumber = 0
 
 
-    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -28,11 +26,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         val getIntent = intent
         remainNumber = getIntent.getIntExtra("remain", 0)
-        val getNumber = getIntent.getIntExtra("number", 0)
+        val getNumber = getIntent.getIntExtra("DiceNumber", 0)
         quessNumber = getNumber
 
         binding.apply {
-            myRemainText.text = "Kalan Hak:$remainNumber"
+            myRemainText.text = getString(R.string.remain_number,remainNumber)
             diceImage.setImageResource(R.drawable.dice_1)
         }
 
@@ -64,12 +62,12 @@ class MainActivity : AppCompatActivity() {
                 val alert = AlertDialog.Builder(this)
                 alert.setTitle("Uyarı Mesajı")
                 alert.setMessage("Başa Dönmek İster Misiniz?")
-                alert.setPositiveButton("Evet") { dialog, which ->
-                    val goEntrancePage2 = Intent(this@MainActivity, entrancePage::class.java)
+                alert.setPositiveButton("Evet") { _, _ ->
+                    val goEntrancePage2 = Intent(this@MainActivity,entrancePage::class.java)
                     startActivity(goEntrancePage2)
                     finish()
                 }
-                alert.setNegativeButton("Hayır") { dialog, which ->
+                alert.setNegativeButton("Hayır") { _, _ ->
                     Toast.makeText(
                         this@MainActivity,
                         "Doğru sayıyı tahmin edemediniz.Oyun Bitmiştir.",
@@ -92,8 +90,8 @@ class MainActivity : AppCompatActivity() {
                 }
                 binding.apply {
                     diceImage.setImageResource(myDrawable)
-                    resultText.text = "Gelen Sayi:$randomNumber"
-                    myRemainText.text = "Kalan Hak:$remainNumber"
+                    resultText.text = getString(R.string.random_number,randomNumber)
+                    myRemainText.text = getString(R.string.remain_number,remainNumber)
                 }
 
                 if (quessNumber == randomNumber) {
@@ -105,9 +103,9 @@ class MainActivity : AppCompatActivity() {
                         .setSpeed(1f,5f)
                         .setFadeOutEnabled(true)
                         .setTimeToLive(5000L)
-                        .addShapes(nl.dionsegijn.konfetti.models.Shape.RECT, nl.dionsegijn.konfetti.models.Shape.CIRCLE)
+                        .addShapes(nl.dionsegijn.konfetti.models.Shape.Square, nl.dionsegijn.konfetti.models.Shape.Circle)
                         .addSizes(Size(12, 5F))
-                        .setPosition(-50f, binding.confetti.getWidth() + 50f, -50f, -50f)
+                        .setPosition(-50f, binding.confetti.width + 50f, -50f, -50f)
                         .streamFor(400,500L)
 
 
@@ -115,15 +113,15 @@ class MainActivity : AppCompatActivity() {
                     val myAlert = AlertDialog.Builder(this)
                     myAlert.setTitle("Uyarı Mesajı")
                     myAlert.setMessage("Doğru tahmini $numberofTry. denemede buldunuz.Devam etmek ister misiniz ?")
-                    myAlert.setPositiveButton("Evet") { dialog, which ->
+                    myAlert.setPositiveButton("Evet") { _,_ ->
                         val goEntrancePageIntent =
-                            Intent(this@MainActivity, entrancePage::class.java)
+                            Intent(this@MainActivity,entrancePage::class.java)
                         startActivity(goEntrancePageIntent)
                     }
-                    myAlert.setNegativeButton("Hayır") { dialog, which ->
+                    myAlert.setNegativeButton("Hayır") { _, _ ->
                         Toast.makeText(this@MainActivity, "Oyun bitmiştir.", Toast.LENGTH_SHORT)
                             .show()
-                        finishAndRemoveTask()
+                        finish()
                     }
                     myAlert.show()
 

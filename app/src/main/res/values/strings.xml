@@ -7,6 +7,8 @@
     <string name="remain_text">Kalan Hak:</string>
     <string name="dice_guess_textview">Zar Tahmin Oyununa Hoşgeldiniz</string>
     <string name="dice_guess_textview2">Lütfen zar tahmininizi ve hak sayınızı yazınız.</string>
+    <string name="remain_number">Kalan Hak:%d</string>
+    <string name="random_number">Gelen Sayi:%d</string>
 
 
 

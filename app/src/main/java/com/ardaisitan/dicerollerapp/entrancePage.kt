@@ -42,22 +42,22 @@ class entrancePage : AppCompatActivity() {
         animator.start()
 
         binding.changePage.setOnClickListener {
-            val myNumber = binding.myNumberText.text.toString().toIntOrNull()
+            val myDiceNumber = binding.myNumberText.text.toString().toIntOrNull()
             val myRemainText = binding.remainText.text.toString().toIntOrNull()
 
-            if (myNumber == null || myRemainText == null) {
+            if (myDiceNumber == null || myRemainText == null) {
                 Toast.makeText(
                     this,
                     "Lütfen zar tahmini ve hak sayinizi numara şeklinde giriniz",
                     Toast.LENGTH_LONG
                 ).show()
-            } else if ((myNumber > 6)) {
+            } else if ((myDiceNumber > 6)) {
                 Toast.makeText(
                     this,
                     "Lütfen zar tahmini bölümüne 6 veya 6'dan küçük bir sayi giriniz",
                     Toast.LENGTH_LONG
                 ).show()
-            } else if (myNumber <= 0 || myRemainText <= 0) {
+            } else if (myDiceNumber <= 0 || myRemainText <= 0) {
                 Toast.makeText(
                     this,
                     "Lütfen 0'dan büyük  bir sayi giriniz.",
@@ -66,7 +66,7 @@ class entrancePage : AppCompatActivity() {
                     .show()
             } else {
                 val myIntent = Intent(applicationContext, MainActivity::class.java)
-                myIntent.putExtra("number", myNumber)
+                myIntent.putExtra("DiceNumber", myDiceNumber)
                 myIntent.putExtra("remain", myRemainText)
                 startActivity(myIntent)
                 finish()
